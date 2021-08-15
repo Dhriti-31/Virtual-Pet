@@ -1,0 +1,12 @@
+function feedDog(){
+dog.addImage("happy dog.png");
+if(foodObj.getFoodStock()<=0){
+  foodObj.updateFoodStock(foodObj.getFoodStock()*0);
+}else{
+  foodObj.updateFoodStock(foodObj.getFoodStock()-1);
+}
+fedTime = database.ref('FeedTime');
+feedTime.background("value",function(data){
+  lastFed = data.val()
+});
+}
